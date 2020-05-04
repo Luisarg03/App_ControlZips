@@ -1,15 +1,6 @@
 import glob
 from os import path, remove
 
-PATH = 'C:/Trabajo/Archivos/Sircreb_zips'
-
-########################################################
-OLDZIPS = PATH + '/oldzips.csv'
-NEWZIPS = PATH + '/newzips.csv'
-CLEAR = PATH + '/*.txt'
-ZIPS = PATH + '/*.zip'
-EXTRACT = PATH+'/'
-
 
 def createlistzips(dir, oldzip, newzip):
     if path.exists(oldzip):
@@ -42,15 +33,15 @@ def upgradelistzips(dir, oldzip, newzip):
             nameoldzip.append(i)
 
     listzip = glob.glob(dir)
-    namezip = []
+    namenewzip = []
 
     for row in listzip:
         row = row[-24:]
-        namezip.append(row)
+        namenewzip.append(row)
 
     compare = []
 
-    for element in namezip:
+    for element in namenewzip:
         if element not in nameoldzip:
             compare.append(element)
         else:
@@ -66,7 +57,3 @@ def upgradelistzips(dir, oldzip, newzip):
     with open(oldzip, 'a+') as f:
         for k in compare:
             f.write(k+'\n')
-
-
-createlistzips(ZIPS, OLDZIPS, NEWZIPS)
-upgradelistzips(ZIPS, OLDZIPS, NEWZIPS)

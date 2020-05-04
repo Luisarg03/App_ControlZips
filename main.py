@@ -4,6 +4,7 @@ from modulos.zips import descomprimir
 from modulos.cabeceras import processCabeceras
 from modulos.detalles import processDetalles
 from modulos.pagos import processPagos
+from modulos.intereses import processIntereses
 
 # Var. Produccion
 # PATH = '/home/pentaho/AGIP/ARCHIVOS/Monsun/DatosSircreb'
@@ -12,8 +13,8 @@ from modulos.pagos import processPagos
 PATH = 'C:/Trabajo/Archivos/Sircreb_zips'
 
 ########################################################
-OLDZIPS = PATH + '/oldzips.csv'
-NEWZIPS = PATH + '/newzips.csv'
+OLDZIPS = PATH + '/zips_cargados.csv'
+NEWZIPS = PATH + '/zips_nuevos.csv'
 CLEAR = PATH + '/*.txt'
 ZIPS = PATH + '/*.zip'
 EXTRACT = PATH+'/'
@@ -22,10 +23,11 @@ EXTRACT = PATH+'/'
 def main():
     createlistzips(ZIPS, OLDZIPS, NEWZIPS)
     upgradelistzips(ZIPS, OLDZIPS, NEWZIPS)
-    descomprimir(CLEAR, ZIPS, EXTRACT)
+    descomprimir(CLEAR, NEWZIPS, EXTRACT)
     processCabeceras(PATH)
     processDetalles(PATH)
     processPagos(PATH)
+    processIntereses(PATH)
 
 
 if __name__ == '__main__':
