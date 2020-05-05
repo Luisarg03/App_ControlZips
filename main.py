@@ -7,10 +7,10 @@ from modulos.pagos import processPagos
 from modulos.intereses import processIntereses
 
 # Var. Produccion
-# PATH = '/home/pentaho/AGIP/ARCHIVOS/Monsun/DatosSircreb'
+PATH = '/home/pentaho/AGIP/ARCHIVOS/Monsun/DatosSircreb'
 
 # Var. Desarrollo
-PATH = 'C:/Trabajo/Archivos/Sircreb_zips'
+# PATH = 'C:/Trabajo/Archivos/Sircreb_zips'
 
 ########################################################
 OLDZIPS = PATH + '/zips_cargados.csv'
