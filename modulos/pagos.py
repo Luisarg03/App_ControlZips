@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-from os import remove
-from os import path
+from os import remove, path
 
 
 def processPagos(dir):
@@ -43,3 +42,13 @@ def processPagos(dir):
 
     else:
         pass
+
+
+def deletePagos():
+    PATHS = ['/home/pentaho/AGIP/ARCHIVOS/Monsun/DatosSircreb',
+             'C:/Trabajo/Archivos/Sircreb_zips']
+
+    for pathtarget in PATHS:
+        pathtarget = pathtarget + '/PagosFull.txt'
+        if path.exists(pathtarget):
+            remove(pathtarget)

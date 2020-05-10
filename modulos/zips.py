@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 import zipfile
 import glob
-from os import remove
-from os import path
+from os import remove, path
 
 
 def descomprimir(clear, newzips, extract):

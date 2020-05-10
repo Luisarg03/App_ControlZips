@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-from os import remove
-from os import path
+from os import remove, path
 
 
 def processDetalles(dir):
@@ -42,3 +41,13 @@ def processDetalles(dir):
 
     else:
         pass
+
+
+def deleteDetalles():
+    PATHS = ['/home/pentaho/AGIP/ARCHIVOS/Monsun/DatosSircreb',
+             'C:/Trabajo/Archivos/Sircreb_zips']
+
+    for pathtarget in PATHS:
+        pathtarget = pathtarget + '/DetallesFull.txt'
+        if path.exists(pathtarget):
+            remove(pathtarget)

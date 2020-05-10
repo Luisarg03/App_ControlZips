@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-from os import remove
-from os import path
+from os import remove, path
 
 
 def processIntereses(dir):
@@ -41,3 +40,13 @@ def processIntereses(dir):
 
     else:
         pass
+
+
+def deleteIntereses():
+    PATHS = ['/home/pentaho/AGIP/ARCHIVOS/Monsun/DatosSircreb',
+             'C:/Trabajo/Archivos/Sircreb_zips']
+
+    for pathtarget in PATHS:
+        pathtarget = pathtarget + '/InteresesFull.txt'
+        if path.exists(pathtarget):
+            remove(pathtarget)

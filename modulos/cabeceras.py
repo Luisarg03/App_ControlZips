@@ -41,3 +41,13 @@ def processCabeceras(dir):
             remove(pathsource)
     else:
         pass
+
+
+def deleteCabeceras():
+    PATHS = ['/home/pentaho/AGIP/ARCHIVOS/Monsun/DatosSircreb',
+             'C:/Trabajo/Archivos/Sircreb_zips']
+
+    for pathtarget in PATHS:
+        pathtarget = pathtarget + '/CabecerasFull.txt'
+        if path.exists(pathtarget):
+            remove(pathtarget)
